@@ -1,0 +1,16 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "karim", email = "karimelhajoui63@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.103.0",
+    "uvicorn[standard]>=0.22.0",
+    "pretty-errors>=1.2.25",
+]
+requires-python = ">=3.7"
+readme = "README.md"
+license = {text = "MIT"}
+
