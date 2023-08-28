@@ -9,6 +9,7 @@ dependencies = [
     "fastapi>=0.103.0",
     "uvicorn[standard]>=0.22.0",
     "pretty-errors>=1.2.25",
+    "requests>=2.31.0",
 ]
 requires-python = ">=3.7"
 readme = "README.md"

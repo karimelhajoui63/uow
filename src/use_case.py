@@ -15,8 +15,8 @@ class UseCase:
 
             AnotherUseCase.method()
 
-            if random.choice([True, False]):
-                raise NotImplementedError()
+            # if random.choice([True, False]):
+            #     raise NotImplementedError()
 
             inner_item = Item(name="inner_item")
             Repo.save(model=inner_item)
