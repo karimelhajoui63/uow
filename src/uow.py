@@ -14,7 +14,7 @@ class UnitOfWork:
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        print("--- START ---")
+        print("--- EXIT ---")
         if exc_type is None:
             self.commit()
         self._instance = None

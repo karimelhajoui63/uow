@@ -1,18 +1,18 @@
-### Run the server
+## Run the server
 
 ```bash
 cd src
 pdm run uvicorn main:app --workers 8
 ```
 
-### Call the POST method
+## Call the POST method
 
 ```bash
 curl -X POST "http://localhost:8000/items/" -H "accept: application/json" -H "Content-Type: application/json" -d '{"name":"item_post_route"}'
 ```
 
 
-### Conclusion
+## Conclusion
 
 We can see that if we open 2 terminals, and run:
 
@@ -41,25 +41,30 @@ add 'another_inner_item' to ['item_post_route_test_111']
 Just register in UoW: name='inner_item'
 add 'inner_item' to ['item_post_route_test_111', 'another_inner_item']
 --- END ---
---- START ---
+--- EXIT ---
 FROM UoW:
 Model SAVED in DB: name='item_post_route_test_111'
 FROM UoW:
 Model SAVED in DB: name='another_inner_item'
 FROM UoW:
 Model SAVED in DB: name='inner_item'
-INFO:     127.0.0.1:62013 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63077 - "POST /items/ HTTP/1.1" 200 OK
 Just register in UoW: name='another_inner_item'
 add 'another_inner_item' to ['item_post_route_test_222']
 Just register in UoW: name='inner_item'
 add 'inner_item' to ['item_post_route_test_222', 'another_inner_item']
 --- END ---
---- START ---
+--- EXIT ---
 FROM UoW:
 Model SAVED in DB: name='item_post_route_test_222'
 FROM UoW:
 Model SAVED in DB: name='another_inner_item'
 FROM UoW:
 Model SAVED in DB: name='inner_item'
-INFO:     127.0.0.1:62030 - "POST /items/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63094 - "POST /items/ HTTP/1.1" 200 OK
 ```
+
+
+## Bonus
+
+We can also uncomment the `raise NotImplementedError()` in `UseCase` and see that no save is done if there is an error in the middle on the UoW
